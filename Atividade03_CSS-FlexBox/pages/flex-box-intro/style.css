@@ -1,0 +1,43 @@
+.container {
+    background-color: #ccc;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    /* column | row-reverse | column-reverse */
+
+    flex-wrap: nowrap;
+    /* wrap | wrap-reverse */
+
+    /* flex-direction + flex-wrap */
+    /* flex-flow: row wrap; */
+
+    justify-content: flex-start;
+    /* flex-end | center | space-between | space-around */
+
+    align-items: flex-start;
+    /* flex-start | flex-end | center | baseline */
+
+    align-content: stretch;
+    /* flex-start | flex-end | center | space-between | space-around */
+}
+
+.item {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 5px;
+    height: 30px;
+
+    /* Manipula a "largura fracionada" que o item terá no espaço disponível +Nx */
+    flex-grow: 1;
+
+    /* Manipula a "largura fraciona" de maneira invertida -Nx */
+    flex-shrink: 1;
+
+    /* Largura Inicial dos itens do flexbox */
+    flex-basis: 300px;
+
+    /* Propriedade que agrupa os valores grow, shrink e basis */
+    flex: 1 1 300px;
+    /* grow | shrink | basis --> ordem */
+}

@@ -19,7 +19,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 140px;
+    padding: 20px 120px;
 }
 
 header h1 {
@@ -27,54 +27,57 @@ header h1 {
     font-weight: 400;
 }
 
-header h2 { font-weight: lighter; }
+header h2 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
 
 header,
 .hero h1,
 .hero .grid { text-shadow: 1px 1px 0 black; }
 
 /* HERO */
+.hero::after {
+    content: "";
+    position: absolute;
+    background: url(../images/banner.jpg) no-repeat;
+    background-size: cover;
+    background-position-y: -130px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: brightness(50%) saturate(130%);
+}
+
 .hero {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 90px 140px;
+    padding: 70px 120px 50px;
     color: white;
     text-transform: uppercase;
     position: relative;
 }
 
-.hero .img-container {
-    position: absolute;
-    width: 100%;
-    height: 1127px;
-    top: -25%;
-    left: 0;
-    z-index: -1;
-    filter: brightness(60%) contrast(110%);
-    overflow: hidden;
-}
-
-.hero .img-container .background {
-    width: 100%;
-    object-fit: cover;
-}
-
 .hero h1 {
     align-self: center;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 400;
     max-width: 60%;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    line-height: 1.2;
 }
 
 .hero .form-card {
     max-width: 50%;
     background-color: #ce0a00;
     border: 1px solid white;
-    padding: 70px 50px;
+    padding: 40px 50px 60px;
     margin-bottom: 20px;
+    font-weight: 400;
 }
 
 .hero .form-card h3 {
@@ -87,30 +90,26 @@ header,
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    align-content: flex-start;
+    gap: 12px;
 }
 
-.hero .form-card form .inputs-block {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 15px;
-}
+.hero .form-card form input,
+.hero .form-card form button { flex-basis: calc((100% / 2) - 12px); }
 
 .hero .form-card form input {
-    padding: 15px 10px;
+    padding: 6px 10px;
     border-radius: 4px;
     font-size: 1rem;
 }
 
 .hero .form-card form button {
-    flex-basis: 49%;
-    padding: 10px 0;
+    padding: 4px 0;
     background-color: #101010;
     text-transform: uppercase;
     color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .hero .grid {
@@ -118,8 +117,7 @@ header,
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    font-size: 1.4rem;
-    gap: 8px;
+    font-size: 1.1rem;
 }
 
 .hero .grid li {
@@ -134,18 +132,21 @@ header,
 
 /* INCREASE MUSCLE */
 .increase-muscle {
-    padding: 0 140px;
+    padding: 0 120px;
     display: flex;
     align-items: flex-start;
 }
 
 .increase-muscle img {
     width: 50%;
+    max-width: 100%;
 }
 
 .increase-muscle .text-column {
-    padding: 60px 80px;
-    width: 60%;
+    width: 50%;
+    padding: 40px 0 40px 60px;
+    font-size: 0.9rem;
+    font-weight: 300;
 }
 
 .increase-muscle .text-column h3 {
@@ -153,6 +154,72 @@ header,
     text-transform: uppercase;
     color: #cd0000;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 .increase-muscle .text-column p:not(:last-of-type) { margin-bottom: 15px; }
+
+/* RECENT VIDEOS */
+.recent-videos {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 120px;
+    background-color: #222222;
+    color: white;
+}
+
+.recent-videos h3 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #d00a00;
+}
+
+.recent-videos .videos-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.recent-videos .videos-row .item { width: calc(100% / 3); }
+.recent-videos .videos-row .item img { width: 100%; }
+
+/* REVERSE INCREASE MUSCLE */
+.increase-muscle.reverse { flex-direction: row-reverse; }
+.increase-muscle.reverse .text-column { padding: 40px 60px 40px 0; }
+
+/* QUOTES */
+.quotes {
+    padding: 40px 120px;
+    background-color: #222222;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.quotes .item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 0.9rem;
+}
+
+.quotes .item h4 {
+    color: #cc0800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 0.8rem;
+}

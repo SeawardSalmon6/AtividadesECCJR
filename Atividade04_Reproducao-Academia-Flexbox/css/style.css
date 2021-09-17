@@ -6,7 +6,10 @@
     font-family: "Oswald", sans-serif;
 }
 
-body { overflow-x: hidden; }
+body {
+    overflow-x: hidden;
+    min-width: 320px;
+}
 
 /* HEADER */
 header {
@@ -20,6 +23,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 120px;
+    text-align: center;
 }
 
 header h1 {
@@ -134,16 +138,13 @@ header,
 .increase-muscle {
     padding: 0 120px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.increase-muscle img {
-    width: 50%;
-    max-width: 100%;
-}
+.increase-muscle img { max-width: 50%; }
 
 .increase-muscle .text-column {
-    width: 50%;
+    max-width: 50%;
     padding: 40px 0 40px 60px;
     font-size: 0.9rem;
     font-weight: 300;
@@ -163,6 +164,7 @@ header,
 .recent-videos {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 60px 120px;
     background-color: #222222;
     color: white;
@@ -222,4 +224,87 @@ footer {
     justify-content: center;
     padding: 20px 0;
     font-size: 0.8rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1090px) {
+    /* HERO BACKGROUND */
+    .hero::after { background-position-y: 0; }
+}
+
+@media screen and (max-width: 800px) {
+    /* CONTENT */
+    header,
+    .hero,
+    .increase-muscle,
+    .increase-muscle.reverse,
+    .recent-videos,
+    .quotes {
+        padding-left: 60px;
+        padding-right: 60px;
+        flex-direction: column;
+    }
+
+    /* HERO */
+    .hero h1 { max-width: 100%; }
+    .hero .form-card {
+        padding: 30px 40px 50px;
+        max-width: 100%;
+    }
+
+    /* INCREASE MUSCLE */
+    .increase-muscle { justify-content: center; }
+    .increase-muscle .text-column,
+    .increase-muscle.reverse .text-column {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .increase-muscle img { max-width: 90%; }
+    .increase-muscle .text-column h3 { text-align: center; }
+
+    /* RECENT-VIDEOS */
+    .recent-videos .videos-row { flex-direction: column; }
+    .recent-videos .videos-row .item { width: 90%; }
+
+    /* QUOTES */
+    .quotes { align-items: center; }
+    .quotes .item { max-width: 90%; }
+}
+
+@media screen and (max-width: 700px) {
+    /* HEADER */
+    header { flex-direction: column; }
+}
+
+@media screen and (max-width: 580px) {
+    /* CONTENT */
+    header,
+    .hero,
+    .increase-muscle,
+    .increase-muscle.reverse,
+    .recent-videos,
+    .quotes {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    /* HERO */
+    .hero h1 {
+        font-size: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .hero .form-card h3 { text-align: center; }
+    .hero .form-card form input,
+    .hero .form-card form button {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    /* HERO FORM */
+    .hero .form-card { padding: 20px; }
+    .hero .grid { font-size: 1rem; }
 }

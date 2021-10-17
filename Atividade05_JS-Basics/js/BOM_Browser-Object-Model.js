@@ -25,8 +25,8 @@ console.log(
 console.log(
     "Navigator Properties",
     "\n------------------------------",
-    "\n-> appName: ", navigator.appName, // returns the navigator app name
-    "\n-> appVersion: ", navigator.appVersion, // returns the navigator version
+    "\n-> appName: ", navigator.appName, // returns the navigator app name @deprecated
+    "\n-> appVersion: ", navigator.appVersion, // returns the navigator version @deprecated
     "\n-> language: ", navigator.language, // returns the navigator standard language
 );
 

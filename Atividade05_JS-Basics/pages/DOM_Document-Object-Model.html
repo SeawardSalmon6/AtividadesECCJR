@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olá Mundo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM - Document Object Model</title>
+
+	<style>
+		.red {
+			color: red;
+		}
+	</style>
 </head>
 <body>
-	<!-- Hello World -->
-    <div id="titulo">Vascão Campeão</div>
-
-	<!-- BOM - Properties and Uses -->
-    <button onclick="voltar()">Anterior</button>
-    <button onclick="proxima()">Próxima</button>
-
 	<!-- getElementsByTagName, Id and ClassName -->
     <div id="fruta">
         Laranja
@@ -55,6 +54,7 @@
 	<!-- First and Last Elements -->
 	<button id="btn">Ver lista</button>
 
+	<!-- Working with Nodes -->
 	<div>
 		<h1>Título</h1>
 		<p>Texto</p>
@@ -62,6 +62,39 @@
 
 	<p id="resultado"></p>
 
-    <script src="js/app.js"></script>
+	<!-- Parent Node -->
+	<div id="brasil">
+		<div id="bahia">
+			<div id="ilheus"></div>
+		</div>
+	</div>
+
+	<!-- setAttribute, removeAttribute, getAttribute -->
+	<h1 id="title">Flamengo Campeão</h1>
+
+	<button id="btn-set">Set</button>
+	<button id="btn-remove">Remove</button>
+	<button id="btn-get">Get</button>
+
+	<p id="class"></p>
+
+	<!-- createTextNode and textContent -->
+	<h1 id="textnode-title"></h1>
+
+	<!-- children and insertBefore -->
+	<ul>
+		<li>Café</li>
+		<li>Leite</li>
+		<li>Água</li>
+	</ul>
+
+	<!-- replaceChild -->
+	<ul>
+		<li>Pão</li>
+		<li>Queijo</li>
+		<li>Nutella</li>
+	</ul>
+
+	<script src="../js/DOM_Document-Object-Model.js"></script>
 </body>
 </html>

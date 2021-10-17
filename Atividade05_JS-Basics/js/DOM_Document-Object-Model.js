@@ -74,3 +74,72 @@ console.log(
 	"lastChild: ", document.documentElement.lastChild, // gets the last child using as parameter the closing tag,
 	"\nfirstChild: ", document.documentElement.firstChild // gets the first child
 )
+
+/* ==========================
+	** NodeList versus HTMLCollection
+		-> HTMLCollection returns an element node
+		-> NodeLists returns everything inside of an element or object, like whitespaces and comments
+========================== */
+
+/* childNodes */
+console.log(
+	document.body.childNodes
+)
+
+/* Nodes */
+let lista = document.body.childNodes
+console.log(
+	"================================================================",
+	"\n length: " + lista.length, // array length
+	"\n innerHTML: ", lista[3].innerHTML, // returns the inner content
+	"\n nodeName: ", lista[3].nodeName, // returns the node/element name
+	"\n nodeType: ", lista[3].nodeType, // returns a 1 (nodeElement), 2 (nodeAttribute), 3 (nodeText) or 8 (comment)
+	"\n nodeValue: ", lista[3].childNodes[3].childNodes[0].nodeValue, // returns the value of the node
+)
+
+/* Parent Node */
+console.log(
+	document.getElementById("ilheus").parentNode, // returns the parent node of an element
+	document.getElementById("ilheus").parentElement // returns the parent node of an element
+);
+
+/* setAttribute */
+document.getElementById("btn-set").addEventListener("click", function() {
+	document.getElementById("title").setAttribute("class", "red")
+});
+
+/* removeAttribute */
+document.getElementById("btn-remove").addEventListener("click", function() {
+	document.getElementById("title").removeAttribute("class")
+});
+
+/* getAttribute */
+document.getElementById("btn-get").addEventListener("click", function() {
+	let value = document.getElementById("title").getAttribute("class");
+	document.getElementById("class").innerHTML = value;
+});
+
+/* createTextNode and textContent */
+let titulo = document.getElementById("textnode-title");
+let texto = document.createTextNode("Um texto qualquer");
+
+titulo.appendChild(texto);
+titulo.textContent = "Um novo texto";
+
+/* children and insertBefore */
+let ulLista = document.getElementsByTagName("ul")[0];
+let itens = ulLista.children;
+
+let novoItem = document.createElement("li");
+novoItem.textContent = "Suco de Laranja";
+
+ulLista.insertBefore(novoItem, itens[0]);
+
+/* replaceChild */
+let ulLista2 = document.getElementsByTagName("ul")[1];
+let itens2 = ulLista2.children;
+
+let novoItem2 = document.createElement("li");
+novoItem2.textContent = "Margarina";
+
+ulLista2.replaceChild(novoItem2, itens2[2]);

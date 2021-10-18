@@ -4,7 +4,7 @@ const phone = document.getElementById("phone"); // Phone Number Input
 const zip = document.getElementById("zip"); // Zip Code Input
 const errBox = document.getElementById("regex-error"); // Error Box display
 
-const emailRegex = /^([\w\-\+\.]{1,64})(\@)([a-zA-Z\d\.\-]{1,64})(\.[a-zA-Z\d]{2,63})$/gm;
+const emailRegex = /^([\w\-\+\.]{1,64})(\@)([a-zA-Z\d\.\-]{1,64})(\.[a-zA-Z\d]{2,63})$/;
 const phoneRegex = /^\(?(\d{2})\)? ?(\d{4,5})-?(\d{4})$/;
 const zipRegex = /^(\d{2}\.?\d{3})\-?(\d{3})$/;
 

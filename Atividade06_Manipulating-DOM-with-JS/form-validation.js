@@ -20,9 +20,9 @@ function displayErrors() {
 	if(!zipRegex.test(zip.value))
 		errMessages.push("Insira um código postal válido!")
 
+	errBox.innerHTML = null;
 	if(errMessages.length > 0) {
 		errBox.style.display = "block";
-		errBox.innerHTML = null;
 
 		for(let err of errMessages)
 			errBox.innerHTML += `<li>${err}</li>`;
@@ -32,9 +32,8 @@ function displayErrors() {
 }
 
 document.getElementById("sign-up").addEventListener("submit", function(e) {
-	e.preventDefault();
 	if(!displayErrors()) {
 		let successMsg = `Obrigado por se cadastrar, ${username.value}!`;
 		alert(successMsg);
-	}
+	} else e.preventDefault();
 });

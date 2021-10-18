@@ -64,7 +64,7 @@ header,
 .hero::after {
     content: "";
     position: absolute;
-    background: url(../images/banner.jpg) no-repeat;
+    background: url(assets/images/banner.jpg) no-repeat;
     background-size: cover;
     background-position: 0 -130px;
     top: 0;

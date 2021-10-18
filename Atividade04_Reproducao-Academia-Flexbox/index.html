@@ -7,14 +7,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <title>Bodybuilding</title>
 </head>
 <body>
-    
+
     <header>
         <h1>Bodybuilding</h1>
         <h2>Increase your Muscle and Strength</h2>
@@ -25,14 +25,16 @@
 
         <div class="form-card">
             <h3>Get Started Now</h3>
-            <form>
+            <form id="sign-up">
                 <!-- Inputs -->
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
-                <input type="tel" placeholder="Phone Number">
-                <input type="text" placeholder="Zip Code">
+                <input id="username" type="text" placeholder="Full Name" required />
+                <input id="email" type="email" placeholder="Email Address" required />
+                <input id="phone" type="tel" minlength="10" maxlength="15" placeholder="Phone Number" required />
+                <input id="zip" type="text" minlength="8" maxlength="10" placeholder="Zip Code" required />
 
-                <button>Sign Up</button>
+                <button id="form-btn">Sign Up</button>
+
+				<ul id="regex-error"></ul>
             </form>
         </div>
 
@@ -54,7 +56,7 @@
 
     <section class="increase-muscle">
         <img src="images/img2.jpg" alt="Man working out.">
-        
+
         <div class="text-column">
             <h3>Increase Muscle Gain and Mantain It</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis suscipit tempore excepturi amet cupiditate quia enim velit culpa illo alias.</p>
@@ -83,7 +85,7 @@
 
     <section class="increase-muscle reverse">
         <img src="images/img6.jpg" alt="Man working out.">
-        
+
         <div class="text-column">
             <h3>Increase Muscle Gain and Mantain It</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis suscipit tempore excepturi amet cupiditate quia enim velit culpa illo alias.</p>
@@ -113,6 +115,7 @@
         <p>Copyright © 2020. All rights reserved | Designed by: buylandingpagedesign.com</p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/e9d504f8e2.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e9d504f8e2.js" crossorign="anonymous"></script>
+    <script src="../Atividade06_Manipulating-DOM-with-JS/form-validation.js"></script>
 </body>
 </html>

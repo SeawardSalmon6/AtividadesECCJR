@@ -11,6 +11,26 @@ body {
     min-width: 320px;
 }
 
+/* Number Input Clearing */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Style for regex-error Box */
+#regex-error {
+	display: none;
+	font-size: 10px;
+	color: white;
+	font-weight: bold;
+	margin-left: 1rem;
+}
+
 /* HEADER */
 header {
     width: 100%;
@@ -44,9 +64,9 @@ header,
 .hero::after {
     content: "";
     position: absolute;
-    background: url(images/banner.jpg) no-repeat;
+    background: url(../images/banner.jpg) no-repeat;
     background-size: cover;
-    background-position-y: -130px;
+    background-position: 0 -130px;
     top: 0;
     left: 0;
     right: 0;
@@ -108,12 +128,17 @@ header,
 }
 
 .hero .form-card form button {
-    padding: 4px 0;
+	padding: 4px 0;
     background-color: #101010;
     text-transform: uppercase;
     color: white;
     font-size: 1rem;
     font-weight: 400;
+	cursor: pointer;
+}
+
+.hero .form-card form button:hover {
+	background-color: black;
 }
 
 .hero .grid {
@@ -185,7 +210,10 @@ header,
     gap: 20px;
 }
 
-.recent-videos .videos-row .item { width: calc(100% / 3); }
+.recent-videos .videos-row .item {
+	width: calc(100% / 3);
+	cursor: pointer;
+}
 .recent-videos .videos-row .item img { width: 100%; }
 
 /* REVERSE INCREASE MUSCLE */
@@ -227,9 +255,38 @@ footer {
     text-align: center;
 }
 
-@media screen and (max-width: 1090px) {
+/* MEDIA QUERIES */
+@media screen and (max-width: 1220px) {
+    * { transition: ease all .5s; }
+
+	/* CONTENT */
+    header,
+    .hero,
+    .increase-muscle,
+    .increase-muscle.reverse,
+    .recent-videos,
+    .quotes {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 2.5rem;
+	}
+
+	.hero .form-card h3 { text-align: center; }
+    .hero .form-card form input,
+    .hero .form-card form button {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 1145px) {
     /* HERO BACKGROUND */
-    .hero::after { background-position-y: 0; }
+    .hero::after { background-position: 0; }
 }
 
 @media screen and (max-width: 800px) {
@@ -249,7 +306,7 @@ footer {
     .hero h1 { max-width: 100%; }
     .hero .form-card {
         padding: 30px 40px 50px;
-        max-width: 100%;
+        max-width: 80%;
     }
 
     /* INCREASE MUSCLE */
@@ -275,32 +332,7 @@ footer {
 @media screen and (max-width: 700px) {
     /* HEADER */
     header { flex-direction: column; }
-}
-
-@media screen and (max-width: 580px) {
-    /* CONTENT */
-    header,
-    .hero,
-    .increase-muscle,
-    .increase-muscle.reverse,
-    .recent-videos,
-    .quotes {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-    
-    /* HERO */
-    .hero h1 {
-        font-size: 2rem;
-        margin-top: 5rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    .hero .form-card h3 { text-align: center; }
-    .hero .form-card form input,
-    .hero .form-card form button {
-        flex-basis: 100%;
-    }
+	.hero .form-card { max-width: 100%; }
 }
 
 @media screen and (max-width: 380px) {

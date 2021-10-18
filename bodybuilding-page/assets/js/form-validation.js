@@ -34,16 +34,27 @@ function displayErrors() {
 	} else return false;
 }
 
-document.getElementById("sign-up").addEventListener("submit", function(e) {
+function validateForm(e) {
 	if(!displayErrors()) {
 		let successMsg = `Obrigado por se cadastrar, ${username.value}!`;
 		alert(successMsg);
 	} else e.preventDefault();
-});
+}
+
+document.getElementById("sign-up").addEventListener("submit", validateForm);
 
 /* =======================================================
 	Atividade 07 - Input Masks and Page Navigation
 ========================================================== */
 
+let phoneMask = ['(99) 9999-9999', '(99) 99999-9999'];
 
+function phoneMasker() {
+	VMasker(phone).unMask();
+	if(phone.value.length >= 14)
+		VMasker(phone).maskPattern(phoneMask[1]);
+	else
+		VMasker(phone).maskPattern(phoneMask[0]);
+}
 
+phone.addEventListener("input", phoneMasker);

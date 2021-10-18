@@ -1,1 +1,1 @@
-location.href = "/bodybuilding-page/";
+document.onload = function() { location.href = "/bodybuilding-page/" };

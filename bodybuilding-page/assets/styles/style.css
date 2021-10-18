@@ -24,11 +24,11 @@ input[type="number"] {
 
 /* Style for regex-error Box */
 #regex-error {
-	display: none;
-	font-size: 10px;
-	color: white;
-	font-weight: bold;
-	margin-left: 1rem;
+    display: none;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    margin-left: 1rem;
 }
 
 /* HEADER */
@@ -44,6 +44,7 @@ header {
     align-items: center;
     padding: 20px 120px;
     text-align: center;
+	z-index: 1;
 }
 
 header h1 {
@@ -51,20 +52,39 @@ header h1 {
     font-weight: 400;
 }
 
-header h2 {
-    font-size: 1.2rem;
-    font-weight: lighter;
+header nav {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 1.2rem;
 }
+
+header nav a {
+	text-decoration: none;
+	margin-left: 1.5rem;
+	color: white;
+	padding: 0.2rem 0.5rem;
+}
+
+header nav a:first-child { margin-left: 0; }
 
 header,
 .hero h1,
 .hero .grid { text-shadow: 1px 1px 0 black; }
 
 /* HERO */
+.hero {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 120px 50px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+
 .hero::after {
     content: "";
     position: absolute;
-    background: url(assets/images/banner.jpg) no-repeat;
+    background: url(../images/banner.jpg) no-repeat;
     background-size: cover;
     background-position: 0 -130px;
     top: 0;
@@ -73,15 +93,6 @@ header,
     bottom: 0;
     z-index: -1;
     filter: brightness(50%) saturate(130%);
-}
-
-.hero {
-    display: flex;
-    flex-direction: column;
-    padding: 70px 120px 50px;
-    color: white;
-    text-transform: uppercase;
-    position: relative;
 }
 
 .hero h1 {

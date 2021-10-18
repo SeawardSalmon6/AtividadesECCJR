@@ -1,3 +1,6 @@
+/* =========================================
+	Atividade 06 - Regex Validation
+========================================= */
 const username = document.getElementById("username"); // Full Name Input
 const email = document.getElementById("email"); // Email Address Input
 const phone = document.getElementById("phone"); // Phone Number Input
@@ -37,3 +40,10 @@ document.getElementById("sign-up").addEventListener("submit", function(e) {
 		alert(successMsg);
 	} else e.preventDefault();
 });
+
+/* =======================================================
+	Atividade 07 - Input Masks and Page Navigation
+========================================================== */
+
+
+

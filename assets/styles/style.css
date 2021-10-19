@@ -8,7 +8,7 @@
 
 body {
     overflow-x: hidden;
-    min-width: 320px;
+    min-width: 330px;
 }
 
 /* Number Input Clearing */
@@ -266,6 +266,8 @@ footer {
     text-align: center;
 }
 
+footer a { margin-left: 1rem; }
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1220px) {
     * { transition: ease all .5s; }
@@ -308,8 +310,8 @@ footer {
     .increase-muscle.reverse,
     .recent-videos,
     .quotes {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 3rem;
+        padding-right: 3rem;
         flex-direction: column;
     }
 
@@ -344,9 +346,38 @@ footer {
     /* HEADER */
     header { flex-direction: column; }
 	.hero .form-card { max-width: 100%; }
+
+	/* FOOTER */
+	footer { flex-direction: column; }
+	footer a { margin-left: 0; }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 540px) {
+	/* CONTENT */
+    header,
+    .hero,
+    .increase-muscle,
+    .increase-muscle.reverse,
+    .recent-videos,
+    .quotes {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	/* HEADER */
+	header nav { font-size: 1rem; }
+	header nav a { margin-left: 1rem; }
+
+	/* HERO FORM */
+    .hero .form-card { padding: 20px; }
+    .hero .grid { font-size: 1rem; }
+}
+
+@media screen and (max-width: 400px) {
+	/* HEADER */
+	header nav { font-size: 0.9rem; }
+	header nav a { margin-left: 0; }
+
     /* HERO FORM */
     .hero .form-card { padding: 20px; }
     .hero .grid { font-size: 1rem; }

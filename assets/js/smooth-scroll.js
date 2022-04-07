@@ -2,47 +2,20 @@
 Atividade 07.2 - Page Navigation
 ========================================= */
 
-$(document).ready(function(){
-	// Add smooth scrolling to all links
-	$("a").on('click', function(event) {
+document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
+  // --> Verifies for standard patter at the anchors
+  if (!anchor.hash) return; // --> Tests if there is a hash on the anchor
+  if (anchor.origin + anchor.pathname !== self.location.href) return; // --> Tests if the hash path is correct
 
-		// Make sure this.hash has a value before overriding default behavior
-		if (this.hash !== "") {
-			// Prevent default anchor click behavior
-			event.preventDefault();
-
-			// Store hash
-			let hash = this.hash;
-
-			// Using jQuery's animate() method to add smooth page scroll
-			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 800, function(){
-
-				// Add hash (#) to URL when done scrolling (default click behavior)
-				window.location.hash = hash;
-			});
-		} // End if
-	});
+  (function (destination) {
+    // --> Receives the destination element (anchor.hash)
+    anchor.addEventListener("click", function (event) {
+      event.preventDefault(); // --> Cancel anchor onClick default behavior
+      window.scrollTo({
+        // --> Scrolls to the element
+        top: destination.offsetTop,
+        behavior: "smooth",
+      });
+    });
+  })(document.querySelector(anchor.hash)); // --> Destination argument
 });
-
-/* document.querySelectorAll('a[href^="#"]').forEach(function (element) {
-	if (!element.hash) return;
-	if (element.origin + element.pathname !== self.location.href) return;
-
-	(function (destination) {
-		element.addEventListener(
-			'click',
-			function (event) {
-				window.scrollTo({
-					top: destination.offsetTop,
-					behavior: 'smooth',
-				});
-				event.preventDefault();
-			},
-			false
-			);
-		})(document.querySelector(element.hash));
-	}); */
-
